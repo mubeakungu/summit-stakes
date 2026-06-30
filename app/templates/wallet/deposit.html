@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Deposit - Summit Stakes{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <h1>Deposit via M-Pesa</h1>
+  <form method="POST">
+    <div class="field">
+      <label>Phone number</label>
+      <input type="text" name="phone" value="{{ current_user.phone }}" required>
+    </div>
+    <div class="field">
+      <label>Amount (KES)</label>
+      <input type="number" name="amount" min="10" max="150000" required>
+    </div>
+    <button type="submit" class="btn btn-gold" style="width:100%;">Send STK push</button>
+  </form>
+  <p style="font-size:13px; color:var(--text-dim); margin-top:14px;">
+    Current balance: KSH {{ "{:,.2f}".format(current_user.wallet.balance) }}
+  </p>
+</div>
+{% endblock %}

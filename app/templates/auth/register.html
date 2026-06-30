@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Register - Summit Stakes{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <h1>Create account</h1>
+  <form method="POST">
+    <div class="field">
+      <label>Full name</label>
+      <input type="text" name="full_name" required>
+    </div>
+    <div class="field">
+      <label>Phone number</label>
+      <input type="text" name="phone" placeholder="0712345678" required>
+    </div>
+    <div class="field">
+      <label>Date of birth</label>
+      <input type="date" name="date_of_birth" required>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-gold" style="width:100%;">Register</button>
+  </form>
+  <p class="responsible-note">
+    You must be 18 or older to register. Age is verified against the date of birth
+    you provide; accounts found to belong to minors will be closed and any balance held.
+  </p>
+</div>
+{% endblock %}
